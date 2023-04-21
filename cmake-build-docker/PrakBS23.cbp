@@ -78,7 +78,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/tmp/PrakBS23/keyValStore.c">
+			<Option target="PrakBS23"/>
+		</Unit>
+		<Unit filename="/tmp/PrakBS23/keyValStore.h">
+			<Option target="PrakBS23"/>
+		</Unit>
 		<Unit filename="/tmp/PrakBS23/main.c">
+			<Option target="PrakBS23"/>
+		</Unit>
+		<Unit filename="/tmp/PrakBS23/sub.c">
+			<Option target="PrakBS23"/>
+		</Unit>
+		<Unit filename="/tmp/PrakBS23/sub.h">
 			<Option target="PrakBS23"/>
 		</Unit>
 		<Unit filename="/tmp/PrakBS23/CMakeLists.txt">

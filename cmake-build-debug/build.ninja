@@ -55,6 +55,18 @@ build CMakeFiles/PrakBS23.dir/main.c.obj: C_COMPILER__PrakBS23_Debug C$:/Users/T
   OBJECT_DIR = CMakeFiles\PrakBS23.dir
   OBJECT_FILE_DIR = CMakeFiles\PrakBS23.dir
 
+build CMakeFiles/PrakBS23.dir/keyValStore.c.obj: C_COMPILER__PrakBS23_Debug C$:/Users/TeipelNi/repo/PrakBS23/keyValStore.c || cmake_object_order_depends_target_PrakBS23
+  DEP_FILE = CMakeFiles\PrakBS23.dir\keyValStore.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\PrakBS23.dir
+  OBJECT_FILE_DIR = CMakeFiles\PrakBS23.dir
+
+build CMakeFiles/PrakBS23.dir/sub.c.obj: C_COMPILER__PrakBS23_Debug C$:/Users/TeipelNi/repo/PrakBS23/sub.c || cmake_object_order_depends_target_PrakBS23
+  DEP_FILE = CMakeFiles\PrakBS23.dir\sub.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\PrakBS23.dir
+  OBJECT_FILE_DIR = CMakeFiles\PrakBS23.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PrakBS23
@@ -63,7 +75,7 @@ build CMakeFiles/PrakBS23.dir/main.c.obj: C_COMPILER__PrakBS23_Debug C$:/Users/T
 #############################################
 # Link the executable PrakBS23.exe
 
-build PrakBS23.exe: C_EXECUTABLE_LINKER__PrakBS23_Debug CMakeFiles/PrakBS23.dir/main.c.obj
+build PrakBS23.exe: C_EXECUTABLE_LINKER__PrakBS23_Debug CMakeFiles/PrakBS23.dir/main.c.obj CMakeFiles/PrakBS23.dir/keyValStore.c.obj CMakeFiles/PrakBS23.dir/sub.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PrakBS23.dir
