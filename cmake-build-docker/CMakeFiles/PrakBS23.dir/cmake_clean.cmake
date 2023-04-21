@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PrakBS23.dir/main.c.o"
+  "CMakeFiles/PrakBS23.dir/keyValStore.c.o"
+  "CMakeFiles/PrakBS23.dir/sub.c.o"
   "PrakBS23.pdb"
   "PrakBS23"
 )
