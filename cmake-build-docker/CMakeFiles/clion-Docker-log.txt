@@ -1,4 +1,4 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/PrakBS23
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/praksb21
 -- Configuring done
 -- Generating done
--- Build files have been written to: /tmp/PrakBS23/cmake-build-docker
+-- Build files have been written to: /tmp/praksb21/cmake-build-docker

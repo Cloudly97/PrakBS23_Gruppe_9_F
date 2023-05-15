@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /tmp/PrakBS23
+CMAKE_SOURCE_DIR = /tmp/praksb21
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /tmp/PrakBS23/cmake-build-docker
+CMAKE_BINARY_DIR = /tmp/praksb21/cmake-build-docker
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PrakBS23.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/PrakBS23.dir/flags.make
 
 CMakeFiles/PrakBS23.dir/main.c.o: CMakeFiles/PrakBS23.dir/flags.make
 CMakeFiles/PrakBS23.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/PrakBS23/cmake-build-docker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/PrakBS23.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PrakBS23.dir/main.c.o   -c /tmp/PrakBS23/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/praksb21/cmake-build-docker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/PrakBS23.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PrakBS23.dir/main.c.o   -c /tmp/praksb21/main.c
 
 CMakeFiles/PrakBS23.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/PrakBS23.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/PrakBS23/main.c > CMakeFiles/PrakBS23.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/praksb21/main.c > CMakeFiles/PrakBS23.dir/main.c.i
 
 CMakeFiles/PrakBS23.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/PrakBS23.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/PrakBS23/main.c -o CMakeFiles/PrakBS23.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/praksb21/main.c -o CMakeFiles/PrakBS23.dir/main.c.s
 
 CMakeFiles/PrakBS23.dir/main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/PrakBS23.dir/main.c.o.provides.build: CMakeFiles/PrakBS23.dir/main.c.
 
 CMakeFiles/PrakBS23.dir/keyValStore.c.o: CMakeFiles/PrakBS23.dir/flags.make
 CMakeFiles/PrakBS23.dir/keyValStore.c.o: ../keyValStore.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/PrakBS23/cmake-build-docker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/PrakBS23.dir/keyValStore.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PrakBS23.dir/keyValStore.c.o   -c /tmp/PrakBS23/keyValStore.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/praksb21/cmake-build-docker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/PrakBS23.dir/keyValStore.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PrakBS23.dir/keyValStore.c.o   -c /tmp/praksb21/keyValStore.c
 
 CMakeFiles/PrakBS23.dir/keyValStore.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/PrakBS23.dir/keyValStore.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/PrakBS23/keyValStore.c > CMakeFiles/PrakBS23.dir/keyValStore.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/praksb21/keyValStore.c > CMakeFiles/PrakBS23.dir/keyValStore.c.i
 
 CMakeFiles/PrakBS23.dir/keyValStore.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/PrakBS23.dir/keyValStore.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/PrakBS23/keyValStore.c -o CMakeFiles/PrakBS23.dir/keyValStore.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/praksb21/keyValStore.c -o CMakeFiles/PrakBS23.dir/keyValStore.c.s
 
 CMakeFiles/PrakBS23.dir/keyValStore.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/PrakBS23.dir/keyValStore.c.o.provides.build: CMakeFiles/PrakBS23.dir/
 
 CMakeFiles/PrakBS23.dir/sub.c.o: CMakeFiles/PrakBS23.dir/flags.make
 CMakeFiles/PrakBS23.dir/sub.c.o: ../sub.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/PrakBS23/cmake-build-docker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/PrakBS23.dir/sub.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PrakBS23.dir/sub.c.o   -c /tmp/PrakBS23/sub.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/praksb21/cmake-build-docker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/PrakBS23.dir/sub.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PrakBS23.dir/sub.c.o   -c /tmp/praksb21/sub.c
 
 CMakeFiles/PrakBS23.dir/sub.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/PrakBS23.dir/sub.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/PrakBS23/sub.c > CMakeFiles/PrakBS23.dir/sub.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/praksb21/sub.c > CMakeFiles/PrakBS23.dir/sub.c.i
 
 CMakeFiles/PrakBS23.dir/sub.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/PrakBS23.dir/sub.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/PrakBS23/sub.c -o CMakeFiles/PrakBS23.dir/sub.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/praksb21/sub.c -o CMakeFiles/PrakBS23.dir/sub.c.s
 
 CMakeFiles/PrakBS23.dir/sub.c.o.requires:
 
@@ -143,7 +143,7 @@ PrakBS23: CMakeFiles/PrakBS23.dir/keyValStore.c.o
 PrakBS23: CMakeFiles/PrakBS23.dir/sub.c.o
 PrakBS23: CMakeFiles/PrakBS23.dir/build.make
 PrakBS23: CMakeFiles/PrakBS23.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/PrakBS23/cmake-build-docker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable PrakBS23"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/praksb21/cmake-build-docker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable PrakBS23"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PrakBS23.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -162,6 +162,6 @@ CMakeFiles/PrakBS23.dir/clean:
 .PHONY : CMakeFiles/PrakBS23.dir/clean
 
 CMakeFiles/PrakBS23.dir/depend:
-	cd /tmp/PrakBS23/cmake-build-docker && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /tmp/PrakBS23 /tmp/PrakBS23 /tmp/PrakBS23/cmake-build-docker /tmp/PrakBS23/cmake-build-docker /tmp/PrakBS23/cmake-build-docker/CMakeFiles/PrakBS23.dir/DependInfo.cmake --color=$(COLOR)
+	cd /tmp/praksb21/cmake-build-docker && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /tmp/praksb21 /tmp/praksb21 /tmp/praksb21/cmake-build-docker /tmp/praksb21/cmake-build-docker /tmp/praksb21/cmake-build-docker/CMakeFiles/PrakBS23.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PrakBS23.dir/depend
 
