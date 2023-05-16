@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/tmp/PrakBS23/cmake-build-docker"/>
+				<Option working_dir="/tmp/praksb21/cmake-build-docker"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/tmp/PrakBS23/cmake-build-docker"/>
+				<Option working_dir="/tmp/praksb21/cmake-build-docker"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="PrakBS23">
-				<Option output="/tmp/PrakBS23/cmake-build-docker/PrakBS23" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/PrakBS23/cmake-build-docker"/>
+				<Option output="/tmp/praksb21/cmake-build-docker/PrakBS23" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/praksb21/cmake-build-docker"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -41,15 +41,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 PrakBS23"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 PrakBS23"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="PrakBS23/fast">
-				<Option output="/tmp/PrakBS23/cmake-build-docker/PrakBS23" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/PrakBS23/cmake-build-docker"/>
+				<Option output="/tmp/praksb21/cmake-build-docker/PrakBS23" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/praksb21/cmake-build-docker"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -61,39 +61,39 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 PrakBS23/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 PrakBS23/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/tmp/PrakBS23/cmake-build-docker"/>
+				<Option working_dir="/tmp/praksb21/cmake-build-docker"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/PrakBS23/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/praksb21/cmake-build-docker/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/tmp/PrakBS23/keyValStore.c">
+		<Unit filename="/tmp/praksb21/keyValStore.c">
 			<Option target="PrakBS23"/>
 		</Unit>
-		<Unit filename="/tmp/PrakBS23/keyValStore.h">
+		<Unit filename="/tmp/praksb21/keyValStore.h">
 			<Option target="PrakBS23"/>
 		</Unit>
-		<Unit filename="/tmp/PrakBS23/main.c">
+		<Unit filename="/tmp/praksb21/main.c">
 			<Option target="PrakBS23"/>
 		</Unit>
-		<Unit filename="/tmp/PrakBS23/sub.c">
+		<Unit filename="/tmp/praksb21/sub.c">
 			<Option target="PrakBS23"/>
 		</Unit>
-		<Unit filename="/tmp/PrakBS23/sub.h">
+		<Unit filename="/tmp/praksb21/sub.h">
 			<Option target="PrakBS23"/>
 		</Unit>
-		<Unit filename="/tmp/PrakBS23/CMakeLists.txt">
+		<Unit filename="/tmp/praksb21/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
