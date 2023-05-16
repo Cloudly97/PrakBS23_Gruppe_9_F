@@ -11,11 +11,11 @@ KeyValue keyValueStore[MAX_ENTRIES];
 int numEntries = 0;
 
 void keyvaluestore() {
-    if (numEntries > 0) {
-        for (int i = 0; i < numEntries; i++) {
-            printf("Nummer:%d Key:%s Value:%s\n", i, keyValueStore[i].key, keyValueStore[i].value);
+    if (numEntries > 0) { // Check if there are any entries in the key-value store
+        for (int i = 0; i < numEntries; i++) { // Iterate through each entry
+            printf("Number:%d Key:%s Value:%s\n", i, keyValueStore[i].key, keyValueStore[i].value); // Print the entry's number, key, and value
         }
     } else {
-        printf("Liste ist leer\n");
+        printf("List is empty\n"); // Print a message indicating that the key-value store is empty
     }
 }

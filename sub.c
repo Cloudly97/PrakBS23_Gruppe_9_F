@@ -25,7 +25,7 @@ void quit(int client_socket);
 int shutdown(int sockfd, int how);
 
 void send_response(int client_socket, const char *response) {
-    send(client_socket, (void *) response, strlen(response), 0);
+    send(client_socket, (void *) response, strlen(response), 0); // Send the response message to the client socket
 }
 
 void methodHandler(int method, const char *key, const char *value, int client_socket) {
@@ -33,19 +33,19 @@ void methodHandler(int method, const char *key, const char *value, int client_so
 
     switch (method) {
         case 0: // get
-            get(key, client_socket);
+            get(key, client_socket); // Call the "get" function to handle the "get" method
             break;
         case 1: // put
-            put(key, value, client_socket);
+            put(key, value, client_socket); // Call the "put" function to handle the "put" method
             break;
         case 2: // del
-            del(key, client_socket);
+            del(key, client_socket); // Call the "del" function to handle the "del" method
             break;
         case 3: // quit
-            quit(client_socket);
+            quit(client_socket); // Call the "quit" function to handle the "quit" method
             break;
         default:
-            snprintf(response, RESPONSESIZE, "Unknown method\n");
+            snprintf(response, RESPONSESIZE, "Unknown method\n"); // If the method is unknown, send an error response
             send_response(client_socket, response);
             break;
     }
@@ -55,49 +55,53 @@ void put(const char *key, const char *value, int client_socket) {
     char response[RESPONSESIZE];
 
     if (value == NULL) {
-        snprintf(response, RESPONSESIZE, "PUT operation: Value is null. Use PUT:KEY:VALUE\r\n");
+        snprintf(response, RESPONSESIZE,
+                 "PUT operation: Value is null. Use PUT:KEY:VALUE\r\n"); // value is null -> error response
         send_response(client_socket, response);
         return;
     }
     if (key == NULL) {
-        snprintf(response, RESPONSESIZE, "PUT operation: Key is null. Use PUT:KEY:VALUE\r\n");
+        snprintf(response, RESPONSESIZE,
+                 "PUT operation: Key is null. Use PUT:KEY:VALUE\r\n"); // error response indicating that the key is null
         send_response(client_socket, response);
         return;
     }
 
     // Insert or update key-value pair in the store
-    strncpy(keyValueStore[numEntries].key, key, MAX_PAYLOAD_SIZE);
-    strncpy(keyValueStore[numEntries].value, value, MAX_PAYLOAD_SIZE);
-    numEntries++;
+    strncpy(keyValueStore[numEntries].key, key, MAX_PAYLOAD_SIZE); // Copy the key to the key-value store
+    strncpy(keyValueStore[numEntries].value, value, MAX_PAYLOAD_SIZE); // Copy the value to the key-value store
+    numEntries++; // increment the number of entries
 
     snprintf(response, RESPONSESIZE, "PUT operation: Key: \"%s\", Value: \"%s\" successfully inserted/updated.\r\n",
-             key, value);
+             key, value); // success response indicating that the key-value pair has been inserted/updated
     send_response(client_socket, response);
 }
 
 void get(const char *key, int client_socket) {
     char response[RESPONSESIZE];
 
-    if (key == NULL) {
-        snprintf(response, RESPONSESIZE, "GET operation: Key is null. Use GET:KEY\r\n");
+    if (key == NULL) { // Check if the key is null
+        snprintf(response, RESPONSESIZE,
+                 "GET operation: Key is null. Use GET:KEY\r\n"); // Send an error response indicating that the key is null
         send_response(client_socket, response);
         return;
     }
 
-    // Lookup value for the given key in the store
+// Lookup value for the given key in the store
     bool keyFound = false;
-    for (int i = 0; i < numEntries; i++) {
-        if (strcmp(keyValueStore[i].key, key) == 0) {
+    for (int i = 0; i < numEntries; i++) { // iterate through each entry in the key-value store
+        if (strcmp(keyValueStore[i].key, key) == 0) { // check if the key matches the current entry's key
             keyFound = true;
             snprintf(response, RESPONSESIZE, "GET operation: Key: \"%s\", Value: \"%s\" found in the store.\r\n",
-                     key, keyValueStore[i].value);
+                     key, keyValueStore[i].value); // response indicating that the key-value pair has been found
             send_response(client_socket, response);
             break;
         }
     }
 
-    if (!keyFound) {
-        snprintf(response, RESPONSESIZE, "GET operation: Key: \"%s\" not found in the store.\r\n", key);
+    if (!keyFound) { // checks if the key was not found in the key-value store
+        snprintf(response, RESPONSESIZE, "GET operation: Key: \"%s\" not found in the store.\r\n",
+                 key); // response indicating that the key was not found
         send_response(client_socket, response);
     }
 }
@@ -105,30 +109,30 @@ void get(const char *key, int client_socket) {
 void del(const char *key, int client_socket) {
     char response[RESPONSESIZE];
     if (key == NULL) {
-        snprintf(response, RESPONSESIZE, "DELETE operation: Key is null. Use DELETE:KEY\r\n");
+        snprintf(response, RESPONSESIZE, "DELETE operation: Key is null. Use DELETE:KEY\r\n"); // error response indicating that the key is null
         send_response(client_socket, response);
         return;
     }
 
 // Delete key from the store
     bool keyFound = false;
-    for (int i = 0; i < numEntries; i++) {
-        if (strcmp(keyValueStore[i].key, key) == 0) {
+    for (int i = 0; i < numEntries; i++) { // Iterate through each entry in the key-value store
+        if (strcmp(keyValueStore[i].key, key) == 0) { // Check if the key matches the current entry's key
             keyFound = true;
-            for (int j = i; j < numEntries - 1; j++) {
+            for (int j = i; j < numEntries - 1; j++) { // Shift the entries to overwrite the deleted entry
                 strncpy(keyValueStore[j].key, keyValueStore[j + 1].key, MAX_PAYLOAD_SIZE);
                 strncpy(keyValueStore[j].value, keyValueStore[j + 1].value, MAX_PAYLOAD_SIZE);
             }
-            numEntries--;
+            numEntries--; // Decrement the number of entries
             break;
         }
     }
 
-    if (keyFound) {
-        snprintf(response, RESPONSESIZE, "DELETE operation: Key: \"%s\" successfully deleted from the store.\r\n", key);
+    if (keyFound) { // If the key was found and deleted
+        snprintf(response, RESPONSESIZE, "DELETE operation: Key: \"%s\" successfully deleted from the store.\r\n", key); // Send a success response
         send_response(client_socket, response);
     } else {
-        snprintf(response, RESPONSESIZE, "DELETE operation: Key: \"%s\" not found in the store.\r\n", key);
+        snprintf(response, RESPONSESIZE, "DELETE operation: Key: \"%s\" not found in the store.\r\n", key); // Send a response indicating that the key was not found
         send_response(client_socket, response);
     }
 }
@@ -137,6 +141,6 @@ void quit(int client_socket) {
     char response[RESPONSESIZE];
     snprintf(response, RESPONSESIZE, "See you soon!\r\n");
     send_response(client_socket, response);
-    shutdown(client_socket, SHUT_RDWR);
-    close(client_socket);
+    shutdown(client_socket, SHUT_RDWR); // Shutdown the client socket
+    close(client_socket); // Close the client socket
 }
