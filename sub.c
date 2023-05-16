@@ -8,15 +8,27 @@
 #define RESPONSESIZE 1024
 #define MAX_PAYLOAD_SIZE 256
 
+typedef struct {
+    char key[MAX_PAYLOAD_SIZE];
+    char value[MAX_PAYLOAD_SIZE];
+} KeyValue;
+
+#define MAX_ENTRIES 100
+
+KeyValue keyValueStore[MAX_ENTRIES];
+int numEntries = 0;
+
 void send(int sockfd, const void *buf, size_t len, int flags);
+
 void quit(int client_socket);
+
 int shutdown(int sockfd, int how);
 
 void send_response(int client_socket, const char *response) {
-    send(client_socket, (void *)response, strlen(response), 0);
+    send(client_socket, (void *) response, strlen(response), 0);
 }
 
-void methodHandler(int method, const char *key, const char *value, char *client_socket) {
+void methodHandler(int method, const char *key, const char *value, int client_socket) {
     char response[RESPONSESIZE];
 
     switch (method) {
@@ -34,7 +46,6 @@ void methodHandler(int method, const char *key, const char *value, char *client_
             break;
         default:
             snprintf(response, RESPONSESIZE, "Unknown method\n");
-            //snprintf is used to store the specified string till a specified length in the specified format
             send_response(client_socket, response);
             break;
     }
@@ -55,6 +66,10 @@ void put(const char *key, const char *value, int client_socket) {
     }
 
     // Insert or update key-value pair in the store
+    strncpy(keyValueStore[numEntries].key, key, MAX_PAYLOAD_SIZE);
+    strncpy(keyValueStore[numEntries].value, value, MAX_PAYLOAD_SIZE);
+    numEntries++;
+
     snprintf(response, RESPONSESIZE, "PUT operation: Key: \"%s\", Value: \"%s\" successfully inserted/updated.\r\n",
              key, value);
     send_response(client_socket, response);
@@ -70,22 +85,52 @@ void get(const char *key, int client_socket) {
     }
 
     // Lookup value for the given key in the store
-    snprintf(response, RESPONSESIZE, "GET operation: Key: \"%s\", Value: \"<value>\" found in the store.\r\n", key);
-    send_response(client_socket, response);
+    bool keyFound = false;
+    for (int i = 0; i < numEntries; i++) {
+        if (strcmp(keyValueStore[i].key, key) == 0) {
+            keyFound = true;
+            snprintf(response, RESPONSESIZE, "GET operation: Key: \"%s\", Value: \"%s\" found in the store.\r\n",
+                     key, keyValueStore[i].value);
+            send_response(client_socket, response);
+            break;
+        }
+    }
+
+    if (!keyFound) {
+        snprintf(response, RESPONSESIZE, "GET operation: Key: \"%s\" not found in the store.\r\n", key);
+        send_response(client_socket, response);
+    }
 }
 
 void del(const char *key, int client_socket) {
     char response[RESPONSESIZE];
-
     if (key == NULL) {
         snprintf(response, RESPONSESIZE, "DELETE operation: Key is null. Use DELETE:KEY\r\n");
         send_response(client_socket, response);
         return;
     }
 
-    // Delete key from the store
-    snprintf(response, RESPONSESIZE, "DELETE operation: Key: \"%s\" successfully deleted from the store.\r\n", key);
-    send_response(client_socket, response);
+// Delete key from the store
+    bool keyFound = false;
+    for (int i = 0; i < numEntries; i++) {
+        if (strcmp(keyValueStore[i].key, key) == 0) {
+            keyFound = true;
+            for (int j = i; j < numEntries - 1; j++) {
+                strncpy(keyValueStore[j].key, keyValueStore[j + 1].key, MAX_PAYLOAD_SIZE);
+                strncpy(keyValueStore[j].value, keyValueStore[j + 1].value, MAX_PAYLOAD_SIZE);
+            }
+            numEntries--;
+            break;
+        }
+    }
+
+    if (keyFound) {
+        snprintf(response, RESPONSESIZE, "DELETE operation: Key: \"%s\" successfully deleted from the store.\r\n", key);
+        send_response(client_socket, response);
+    } else {
+        snprintf(response, RESPONSESIZE, "DELETE operation: Key: \"%s\" not found in the store.\r\n", key);
+        send_response(client_socket, response);
+    }
 }
 
 void quit(int client_socket) {
